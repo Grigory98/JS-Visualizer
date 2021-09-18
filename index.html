@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Sounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id='container'>
+        <audio src='' id='audio'></audio>
+    </div>
+
+    <div id='main'>
+        <div id='logo'></div>
+    </div>
+    
+    <aside id='musicPanel'>
+        <div id='openMenu' class='toggleButton'>&#129092;</div>
+        <div class='image-upload'>
+            <label for='audioFile'> 
+                <img src='assets/img/cloud.png' alt='upload' class='imageCloud'/>
+            </label>
+            <input type='file' id='audioFile' accept="audio/*">
+        </div>
+        <div id='optionPanel'>
+            Circle:
+            <input type='checkbox' id='circle' checked>
+            <br>
+            Visualizer:
+            <input type='checkbox' id='visual' checked>
+            <br> 
+            Background:
+            <input type='checkbox' id='picture'>
+                   
+        </div>
+    </aside>
+
+    <div id='controlPanel'>
+        <div id='openBar' class='toggleButtonBottom'>&#129093;</div>
+        <div id='visualizer'></div>
+        <p id='timebar'></p>
+        <div class="slidecontainer">
+            <input type='range' min='0' max='100' value='0' class='slider' id='myRange'>  
+        </div>
+
+        <div id='play'>P</div>
+        <div id='pause' hidden>P</div>
+        <div id='stop'>S</div>
+        <input type='range' id='volume'>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
