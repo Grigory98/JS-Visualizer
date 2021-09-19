@@ -38,7 +38,7 @@ body #main {
 }
 
 #main.activeX {
-    /*position: fixed;*/
+    position: fixed;
     transform: translateX(-290px) scaleX(0.92);
 }
 
