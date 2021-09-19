@@ -4,6 +4,7 @@ var timebar, start, slider, visualizer, pic;
 var controlPanel, musicPanel, openMenu, openBar;
 var optionCircle, optionVisible, optionPicture;
 var vis;
+var mask;
 
 start = undefined;
 main = document.getElementById('main');
@@ -22,6 +23,7 @@ openMenu = document.getElementById('openMenu');
 openBar = document.getElementById('openBar');
 volume = document.getElementById('volume');
 slider = document.getElementById("myRange");
+mask = document.querySelector('.mask');
 
 timebar = document.getElementById('timebar');
 optionCircle = document.getElementById('circle');
@@ -175,6 +177,14 @@ optionPicture.onclick = function() {
         picture.style.visibility = 'hidden';
     }
 }
+
+window.addEventListener('load', function() {
+    mask.classList.add('hide');
+    setTimeout(() => {
+        mask.remove();
+    }, 600);
+});
+
 
 function preparation() {
     context = new AudioContext();
