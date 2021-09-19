@@ -3,8 +3,7 @@ var playbtn, stopbtn, pausebtn, openbtn, closebtn, volume;
 var timebar, start, slider, visualizer, pic;
 var controlPanel, musicPanel, openMenu, openBar;
 var optionCircle, optionVisible, optionPicture;
-var vis;
-var mask;
+var vis, mask, loader;
 
 start = undefined;
 main = document.getElementById('main');
@@ -23,7 +22,8 @@ openMenu = document.getElementById('openMenu');
 openBar = document.getElementById('openBar');
 volume = document.getElementById('volume');
 slider = document.getElementById("myRange");
-mask = document.querySelector('.mask');
+mask = document.getElementById('mask');
+loader = document.getElementById('loader');
 
 timebar = document.getElementById('timebar');
 optionCircle = document.getElementById('circle');
@@ -178,11 +178,16 @@ optionPicture.onclick = function() {
     }
 }
 
+// window.onload = function() {
+//     mask.classList.add('hide');
+//     setTimeout(() => {
+//         mask.remove('hide');
+//     }, 600);
+// }
+
 window.onload = function() {
-    mask.classList.add('hide');
-    setTimeout(() => {
-        mask.remove('hide');
-    }, 600);
+    loader.style.display = 'none';
+    mask.style.display = 'none';
 }
 
 function preparation() {
