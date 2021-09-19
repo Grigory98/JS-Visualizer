@@ -1,0 +1,303 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: black;
+    width: 100%;
+    height: 100%;
+}
+
+body #main {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+#picture {
+    position: fixed;
+}
+
+#main #logo {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgb(73, 146, 73);
+    opacity: 0.3;
+    z-index: 3;
+}
+
+#main.activeX {
+    position: fixed;
+    transform: translateX(-290px) scaleX(0.92);
+}
+
+#musicPanel {
+    position: fixed;
+    top: 0;
+    right: -380px;
+    width: 380px;
+    height: 100%;
+    background: gray;
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+#musicPanel .toggleButton {
+    position: absolute;
+    right: 400px;
+    top: 0.5%;
+    background: rgb(37, 170, 43);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20pt;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    opacity: 0.20;
+    cursor: pointer;
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+#musicPanel .toggleButton:hover {
+    background:rgb(0, 92, 8);
+    opacity: 1;
+}
+
+#musicPanel.active {
+    right: 0;
+}
+
+#musicPanel .image-upload .imageCloud {
+    width: 50px;
+    height: 50px;
+}
+
+.imageCloud {
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    cursor: pointer;
+}
+
+#controlPanel {
+    position: fixed;
+    width: 100%;
+    height: 17%;
+    bottom: -170px;
+    background-color:rgb(24, 24, 24);
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+#controlPanel .toggleButtonBottom {
+    position: absolute;
+    bottom: 170px;
+    left: 0.5%;
+    width: 40px;
+    height: 40px;
+    background: rgb(37, 170, 43);
+    opacity: 0.20;
+    border-radius: 50%;
+    font-size: 20pt;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+    z-index: 1;
+}
+
+#controlPanel #play, #controlPanel #stop, #controlPanel #pause{
+    position: absolute;
+    left: 44%;
+    top: 40%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 30pt;
+    text-align: center;
+    justify-content: justify;
+    cursor: pointer;
+    -moz-transition: all 500ms;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+#controlPanel #stop {
+    left: 47%;
+}
+
+#controlPanel #volume {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#visualizer {
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+}
+
+#visualizer .strip {
+    position: absolute;
+    bottom: 159px;
+    width: 10px;
+    background-color: white;
+    border-radius: 10%;
+}
+
+#timebar {
+    position: absolute;
+    bottom: 175px;
+    right:0;
+    margin-top: 35%;
+    color: white;
+}
+
+#controlPanel .toggleButtonBottom:hover {
+    background:rgb(0, 92, 8);
+    opacity: 1;
+}
+
+#controlPanel #play:hover {
+    background: black;
+    color: white;
+}
+
+#controlPanel #stop:hover {
+    background: black;
+    color: white;
+}
+
+#controlPanel #pause:hover {
+    background: black;
+    color: white;    
+}
+
+#controlPanel.active {
+    bottom: 0;
+}
+
+#controlPanel.activeX {
+    transform: translateX(-192px) scaleX(0.804);
+}
+
+#controlPanel.pauseActive {
+    background-color:white;
+}
+
+#optionPanel {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 17%;
+    background-color:rgb(49, 49, 49);
+    color: white;
+    font-size: 14pt;
+}
+
+.openclosebtn {
+    position: absolute;
+    top: 80%;
+    left: 0.5%;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 99%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.ss {
+    color: white;
+}
+
+.image-upload>input {
+    display: none;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgb(27, 27, 27);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 150px;
+    height: 150px;
+    border: 8px solid rgba(31, 67, 121, 0.6);
+    border-radius: 50%;
+    border-left-color: rgb(92, 92, 255);
+    border-left-width: 10px;
+    animation: loader 1.3s linear infinite;
+    
+}
+
+.hide {
+    opacity: 0;
+}
+
+@keyframes loader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
