@@ -233,7 +233,7 @@ function loop() {
         vis.style.height = array[i] + 'px';
         vis.style.backgroundColor = 'rgb(80, '+(i+80)+', '+(array[i]+50)+')';
     }
-    picture.style.width = 1920 + array[0] + 'px';
+    picture.style.width = 1920 + 'px';
     logo.height = (array[0]) + 'px';
     logo.width = (array[0]) + 'px';
     logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')';
