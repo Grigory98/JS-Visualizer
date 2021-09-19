@@ -24,7 +24,7 @@ body #main {
     transition: all 500ms;
 }
 
-#main #picture {
+#picture {
     position: fixed;
 }
 
