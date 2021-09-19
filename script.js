@@ -1,11 +1,14 @@
 var main, audio, context, analyser, src, array, logo, file;
 var playbtn, stopbtn, pausebtn, openbtn, closebtn, volume;
-var timebar, start, slider, visualizer;
+var timebar, start, slider, visualizer, pic;
 var controlPanel, musicPanel, openMenu, openBar;
+var optionCircle, optionVisible, optionPicture;
+var vis;
 
 start = undefined;
 main = document.getElementById('main');
 visualizer = document.getElementById('visualizer');
+picture = document.getElementById('picture');
 file = document.getElementById('audioFile');
 logo = document.getElementById('logo').style;
 audio = document.getElementById('audio');
@@ -21,6 +24,9 @@ volume = document.getElementById('volume');
 slider = document.getElementById("myRange");
 
 timebar = document.getElementById('timebar');
+optionCircle = document.getElementById('circle');
+optionVisible = document.getElementById('visual');
+optionPicture = document.getElementById('pic');
 
 file.onchange = function() {
     preparation();
@@ -35,6 +41,7 @@ playbtn.onclick = function() {
         if(audio.currentTime == 0) {
             preparation();
             var files = file.files;
+            console.log(file.files);
             audio.src = URL.createObjectURL(files[0]);
             audio.load();
             audio.play();
@@ -55,7 +62,32 @@ playbtn.onclick = function() {
         }
     }
     else {
-        alert('Файл не выбран!');
+        if(audio.currentTime == 0) {
+            preparation();
+            //var files = file.files;
+            //console.log(file.files);
+            //audio.src = URL.createObjectURL(files[0]);
+            audio.crossOrigin="anonymous"
+            audio.load();
+            audio.play();
+        }
+        else {
+            audio.play();
+            requestAnimationFrame(loop);
+        }
+        pausebtn.classList.toggle('active');
+        if(pausebtn.classList.contains('active')) {
+            playbtn.style.display = 'none';
+            pausebtn.style.display = 'block';
+            controlPanel.classList.remove('pauseActive');
+        }
+        else {
+            playbtn.style.display = 'block';
+            pausebtn.style.display = 'none';
+        }
+        //alert('No file selected');
+        //audio.load();
+        //audio.play();
     }
 }
 
@@ -117,6 +149,33 @@ slider.oninput = function() {
     audio.currentTime = this.value;
 }
 
+optionCircle.onclick = function() {
+    if(optionCircle.checked == true) {
+        logo.visibility = 'visible';
+    }
+    else {
+        logo.visibility = 'hidden';
+    }
+}
+
+optionVisible.onclick = function() {
+    if(optionVisible.checked == true) {
+        visualizer.style.visibility = 'visible';
+    }
+    else {
+        visualizer.style.visibility = 'hidden';
+    }
+}
+
+optionPicture.onclick = function() {
+    if(optionPicture.checked == true) {
+        picture.style.visibility = 'visible';
+    }
+    else {
+        picture.style.visibility = 'hidden';
+    }
+}
+
 function preparation() {
     context = new AudioContext();
     analyser = context.createAnalyser();
@@ -139,7 +198,7 @@ function durationTimer(count) {
     return durationTime(timer - count);
 }
 
-var vis1, vis2, vis3, vis;
+
 
 for(var i=0; i<160; i++) {
     var vis = document.createElement('div');
@@ -148,8 +207,9 @@ for(var i=0; i<160; i++) {
     vis.style.left = (12 * i) + 'px';
     vis.style.height = '50px';
     visualizer.append(vis);
-    console.log(vis);
 }
+var staticPictureSizeW = picture.clientWidth;
+
 
 function loop() {
     start = window.requestAnimationFrame(loop);
@@ -173,7 +233,7 @@ function loop() {
         vis.style.height = array[i] + 'px';
         vis.style.backgroundColor = 'rgb(80, '+(i+80)+', '+(array[i]+50)+')';
     }
-    
+    picture.style.width = staticPictureSizeW + array[0] + 'px';
     logo.height = (array[0]) + 'px';
     logo.width = (array[0]) + 'px';
     logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')';

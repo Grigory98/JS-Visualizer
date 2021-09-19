@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header name = "Access-Control-Allow-Origin" value = "*" />
     <div id='container'>
-        <audio src='' id='audio'></audio>
+        <audio id='audio'>
+            <source src="./music/music1.mp3" type="audio/mpeg">
+        </audio>
     </div>
-
+    
     <div id='main'>
+        <div id='picture'><img src='assets/img/background.jpg' alt='Izhevsk' width="100%" height="auto"></div>    
         <div id='logo'></div>
     </div>
     
@@ -31,7 +35,7 @@
             <input type='checkbox' id='visual' checked>
             <br> 
             Background:
-            <input type='checkbox' id='picture'>
+            <input type='checkbox' id='pic' checked>
                    
         </div>
     </aside>

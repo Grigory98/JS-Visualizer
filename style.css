@@ -12,6 +12,7 @@ body {
 
 body #main {
     display: flex;
+    position: fixed;
     justify-content: center;
     align-items: center;
     margin: 0%;
@@ -23,14 +24,21 @@ body #main {
     transition: all 500ms;
 }
 
+#main #picture {
+    position: fixed;
+}
+
 #main #logo {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: red;
+    background: rgb(73, 146, 73);
+    opacity: 0.3;
+    z-index: 3;
 }
 
 #main.activeX {
+    /*position: fixed;*/
     transform: translateX(-290px) scaleX(0.92);
 }
 
@@ -191,7 +199,7 @@ body #main {
 }
 
 #controlPanel.activeX {
-    transform: translateX(-188px) scaleX(0.80);
+    transform: translateX(-192px) scaleX(0.804);
 }
 
 #controlPanel.pauseActive {
