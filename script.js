@@ -178,12 +178,12 @@ optionPicture.onclick = function() {
     }
 }
 
-window.addEventListener('load', () => {
+window.onload = function() {
     mask.classList.add('hide');
     setTimeout(() => {
         mask.remove('hide');
     }, 600);
-});
+}
 
 function preparation() {
     context = new AudioContext();
@@ -206,7 +206,6 @@ function durationTimer(count) {
     var timer = parseInt(audio.duration);
     return durationTime(timer - count);
 }
-
 
 
 for(var i=0; i<160; i++) {
