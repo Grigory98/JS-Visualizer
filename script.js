@@ -178,10 +178,10 @@ optionPicture.onclick = function() {
     }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
     mask.classList.add('hide');
     setTimeout(() => {
-        mask.remove();
+        mask.remove('hide');
     }, 600);
 });
 
