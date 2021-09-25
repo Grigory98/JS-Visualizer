@@ -123,13 +123,17 @@ pausebtn.onclick = function() {
 openMenu.onclick = function() {
     musicPanel.classList.toggle('active');
     if(musicPanel.classList.contains('active')) {
-        openMenu.innerHTML = '&#129094;';
+        //openMenu.innerHTML = '&#129094;'
+        document.querySelector('.arrowUp').classList.add('active');
+        document.querySelector('.arrowDown').classList.add('active');
         main.classList.add('activeX');
         controlPanel.classList.add('activeX');
     }
     else {
-        openMenu.innerHTML = '&#129092;';
+       //openMenu.innerHTML = '&#129092;';
         main.classList.remove('activeX');
+        document.querySelector('.arrowUp').classList.remove('active');
+        document.querySelector('.arrowDown').classList.remove('active');
         controlPanel.classList.remove('activeX');
     }
 }
@@ -137,10 +141,14 @@ openMenu.onclick = function() {
 openBar.onclick = function() {
     controlPanel.classList.toggle('active');
     if(controlPanel.classList.contains('active')) {
-        openBar.innerHTML = '&#129095';
+        //openBar.innerHTML = '&#129095';
+        document.querySelector('.arrowLeft').classList.add('active');
+        document.querySelector('.arrowRight').classList.add('active');
     }
     else {
-        openBar.innerHTML = '&#129093';
+        //openBar.innerHTML = '&#129093';
+        document.querySelector('.arrowLeft').classList.remove('active');
+        document.querySelector('.arrowRight').classList.remove('active');
     }
 }
 
@@ -179,13 +187,6 @@ optionPicture.onclick = function() {
     }
 }
 
-// window.onload = function() {
-//     mask.classList.add('hide');
-//     setTimeout(() => {
-//         mask.remove('hide');
-//     }, 600);
-// }
-
 window.onload = function() {
     loader.style.display = 'none';
     mask.style.display = 'none';
@@ -221,7 +222,6 @@ for(var i=0; i<160; i++) {
     vis.setAttribute('id', 'num'+i);
     vis.setAttribute('class', 'strip');
     vis.style.left = (12 * i) + 'px';
-    vis.style.height = '50px';
     visualizer.append(vis);
 }
 
@@ -245,11 +245,33 @@ function loop() {
     for(var i=0; i<160; i++) {
         vis = document.getElementById('num'+i);
         vis.style.height = array[i] + 'px';
-        vis.style.backgroundColor = 'rgb(80, '+(i+80)+', '+(array[i]+50)+')';
+        vis.style.backgroundColor = 'rgb('+(array[i]+array[i])+','+(array[i]-100)+','+(array[i]+200)+')';
     }
     picture.style.width = staticPictureSizeW + array[0] + 'px';
+
+    switch(true) {
+        case(array[0] >= 50 && array[0] < 100):
+            logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')'
+            logo.opacity = '0.3';
+            break;
+
+        case(array[0] >= 100 && array[0] <= 200):
+            logo.backgroundColor = 'rgb(0,0,205)';
+            logo.opacity = '0.5';
+            break;
+        
+        case(array[0] > 200):
+            logo.backgroundColor = 'rgb('+(array[40]+199)+',21,133)';
+            logo.opacity = '0.7';
+            break;
+        
+        default:
+            break;
+    }
+            
+
     logo.height = (array[0]) + 'px';
     logo.width = (array[0]) + 'px';
-    logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')';
+    //logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')';
 }
 

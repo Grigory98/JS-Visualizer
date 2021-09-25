@@ -301,3 +301,106 @@ body #main {
         transform: rotate(360deg);
     }
 }
+
+.toggleButton .arrowUp {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 10px 5px;
+    rotate: 140deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+    
+}
+
+.toggleButton .arrowDown {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 11px 5px;
+    rotate: 46deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButton .arrowUp.active {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 10px 9px;
+    rotate: 220deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButton .arrowDown.active {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 9px 9.5px;
+    rotate: 138deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButtonBottom .arrowLeft {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    rotate: 135deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButtonBottom .arrowRight {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    float:right; 
+    rotate: 45deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButtonBottom .arrowLeft.active {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    rotate: 45deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
+
+.toggleButtonBottom .arrowRight.active {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    float: right; 
+    rotate: 135deg;
+    -moz-transition: all 700ms;
+    -webkit-transition: all 700ms;
+    transition: all 700ms;
+}
