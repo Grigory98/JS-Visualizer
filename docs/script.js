@@ -3,7 +3,8 @@ var playbtn, stopbtn, pausebtn, openbtn, closebtn, volume;
 var timebar, start, slider, visualizer, pic;
 var controlPanel, musicPanel, openMenu, openBar;
 var optionCircle, optionVisible, optionPicture;
-var vis, mask, loader;
+var vis, mask, loader, staticPictureSizeW;
+
 
 start = undefined;
 main = document.getElementById('main');
@@ -188,6 +189,8 @@ optionPicture.onclick = function() {
 window.onload = function() {
     loader.style.display = 'none';
     mask.style.display = 'none';
+    staticPictureSizeW = document.body.clientWidth;
+    audio.currentSrc = 'music/music1.mp3';
 }
 
 function preparation() {
@@ -221,7 +224,6 @@ for(var i=0; i<160; i++) {
     vis.style.height = '50px';
     visualizer.append(vis);
 }
-var staticPictureSizeW = picture.clientWidth;
 
 function loop() {
     start = window.requestAnimationFrame(loop);
@@ -245,7 +247,7 @@ function loop() {
         vis.style.height = array[i] + 'px';
         vis.style.backgroundColor = 'rgb(80, '+(i+80)+', '+(array[i]+50)+')';
     }
-    picture.style.width = 1920 + array[0] + 'px';
+    picture.style.width = staticPictureSizeW + array[0] + 'px';
     logo.height = (array[0]) + 'px';
     logo.width = (array[0]) + 'px';
     logo.backgroundColor = 'rgb('+(array[40] - 150)+','+(array[40]+20)+','+(array[40]-45)+')';
